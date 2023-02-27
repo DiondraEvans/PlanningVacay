@@ -1,28 +1,23 @@
-import logo from './logo.svg';
+import Nav from './components/nav';
+import SearchBar from './components/search-bar';
+import FilterBar from './components/filterbar';
+import CardHolder from './components/card_holder';
+import { useState } from 'react';
+
 import './App.css';
 
+
 function App() {
-  const testFunction = async () => {
-    const response = await  fetch('/test_route');
-    
-  }
-  testFunction()
+  const [carddata, setcarddata] = useState("");
+   
+     
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav />
+      <SearchBar setcarddata={setcarddata} />
+      <FilterBar />
+      <CardHolder setcarddata={setcarddata} carddata={carddata}/>
     </div>
   );
 }

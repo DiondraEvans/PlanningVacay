@@ -1,0 +1,17 @@
+.container{
+    margin: 50px auto;
+    border: 1px solid black;
+    width: 1452px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+}
+.m-filters{
+    border: 1px solid black;
+    height: 40px;
+}
+.f-pic{
+    width: 22px;
+}

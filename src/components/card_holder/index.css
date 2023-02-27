@@ -1,0 +1,9 @@
+.container-card{
+    border: 1px solid black;
+    display: grid;
+    margin: auto;
+    width: 1398px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
+}

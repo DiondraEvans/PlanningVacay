@@ -1,0 +1,93 @@
+.search-area{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+.bar{
+    width: 836.56px;
+    border: 1px solid black;
+    border-radius: 69px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.where{
+    border: none;
+    text-align: left;
+    flex-grow: 2;
+    border-radius: 69px;
+    height: 53px;
+    text-align: center;
+}
+.where:active{
+    border: 1px solid black;
+    text-align: left;
+    flex-grow: 2;
+    border-radius: 69px;
+    height: 53px;
+    text-align: center;
+}
+.react-datepicker-wrapper {
+    display: inline-block;
+    padding: 0;
+    border: 0;
+    flex: 19;
+}
+.checkin{
+    border-radius: 69px;
+    border: 1px solid black;
+    text-align: center;
+    height: 53px;
+    border: none;
+}
+.checkin:active{
+    border-radius: 69px;
+    border: 1px solid black;
+    text-align: center;
+    height: 53px;
+}
+.checkout{
+    border-radius: 69px;
+    text-align: center;
+    height: 53px;
+    border: none;
+}
+.checkout:active{
+    border-radius: 69px;
+    border: 1px solid black;
+    text-align: center;
+    height: 53px;
+}
+.gp{
+    border: 1px solid black;
+    text-align: left;
+    height: 53px;
+    border-radius: 69px;
+    flex-grow: 1;
+}
+.guests{
+    border: none;
+    text-align: center;
+    height: 53px;
+    border-radius: 69px;
+    flex-grow: 1;
+}
+.guests:active{
+    border: 1px solid black;
+    text-align: center;
+    height: 53px;
+    border-radius: 69px;
+    flex-grow: 1;
+}
+.search-btn{
+    border: 1px solid black;
+    background-color: #FF385C;
+    text-align: center;
+    height: 53px;
+    width: 66px;
+    border-radius: 100%;
+    cursor: pointer;
+}

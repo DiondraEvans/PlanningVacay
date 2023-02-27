@@ -1,0 +1,17 @@
+.nav{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px;
+}
+.links{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+li{
+    list-style-type: none;
+    margin-left: 30px;
+}
