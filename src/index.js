@@ -4,9 +4,10 @@ import './index.css';
 import App from './App';
 import Tripdetails from './pages/Trip-details-and-invite';
 import Pickvacationspot from './pages/Pick_Vacation_Spot'
-import Singlevacation from "./pages/Single_Vacation"
+import HotelOptions from "./pages/Hotel_Options"
 import Activetrips from './pages/Active-trips'
 import reportWebVitals from './reportWebVitals';
+import ContextProvider from './contexts/app_context';
 import {
   createBrowserRouter,
   RouterProvider
@@ -26,8 +27,8 @@ const router = createBrowserRouter([
     element: <Pickvacationspot />
   },
   {
-    path: "/single",
-    element: <Singlevacation  />
+    path: "/hotelOptions/:id",
+    element: <HotelOptions  />
   },
   {
     path: "/activetrips",
@@ -40,7 +41,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <ContextProvider>
+      <RouterProvider router={router}/>
+    </ContextProvider>
   </React.StrictMode>
 );
 

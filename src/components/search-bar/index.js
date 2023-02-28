@@ -1,6 +1,7 @@
 import './index.css';
 import axios from 'axios';
-import { useState } from 'react';
+import { useState} from 'react';
+import { Link } from 'react-router-dom';
 import searchglass from "./images/glass.png"
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
@@ -35,15 +36,28 @@ function SearchBar(props) {
           url: `/search/${string}`
       });
       //pull the data out of the response. setcarddata can not take an object only an array. and not an array of objects but an array of components so map through using a card as a structure for what we want to show up on our page
-      // setcarddata(serverResponse)
+      
       console.log(serverResponse.data);
       let arrayOfCards = serverResponse.data.map((cardObject, index)=>{
-          return(<Card key={index} cardObject={cardObject}/>) 
+        console.log(cardObject.dest_id)
+          return(
+          <Link to ={`/hotelOptions/${cardObject.dest_id}`}>
+            <Card key={index} cardObject={cardObject} />
+          </Link>) 
           })
       setcarddata(arrayOfCards)
       setSearchString('');
+    }
+    //showing the popup. toggle true and false shows and hides the popup
+    const [showDiv, setShowDiv] = useState(false);
+    function handleClick() {
+      if(showDiv == false){
+        setShowDiv(true);
+    } else if (showDiv == true){
+        setShowDiv(false);
+    }
   }
-
+    console.log(showDiv)
   return (
     <div className="search-area">
       
@@ -58,8 +72,8 @@ function SearchBar(props) {
         
           <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} className="checkout" />
           
-          <div className="gp">
-              <p>Group planning</p>
+          <div className="gp" onClick={handleClick}>
+              <p><b>Group planning</b></p>
               <p>Invite friends to plan</p>
           </div>
           
@@ -70,7 +84,7 @@ function SearchBar(props) {
           <button className="search-btn"><img src={searchglass}></img></button>
           
         </form>
-      
+        {showDiv && <div className="invitefriendspopup"><h2>Book With...</h2><button className="invitenow">Invite friends</button></div>}
     </div>
     
   );

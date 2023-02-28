@@ -5,7 +5,8 @@ import axios from 'axios';
 
 function GetCardHolder(props) {
    let {carddata} = props
-   let {setcarddata} = props
+
+   //On first render, a search for atlanta will show
     // useEffect(() =>{
     //     const makingacall = async () => {
     //                 let serverResponse = await axios({
@@ -26,7 +27,7 @@ function GetCardHolder(props) {
     //             setcarddata(arrayOfCards)
     //     }
     //     makingacall();
-    //   }, [])
+    //   },[])
 console.log(carddata)
   //  let results = carddata.map((cardObject, index)=>{
   //   return(<Card key={index} cardObject={cardObject}/>) 
