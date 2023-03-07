@@ -40,6 +40,7 @@ app.get('/test_route', (req, res) => {
     res.send("good route!")
 })
 
+
 app.get('/search', async (req, res) => {
     let where = req.query.location
     let type = req.query.type
