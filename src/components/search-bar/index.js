@@ -66,7 +66,7 @@ const navigate = useNavigate();
           if(!string){
             let serverResponse = await axios({
               method: 'GET',
-              url: 'http://localhost:5000/search?location=Atlanta&type=home&guest=2'
+              url: '/search?location=Atlanta&type=home&guest=2'
             });
             console.log(serverResponse.data);
             let data = serverResponse.data
@@ -82,7 +82,7 @@ const navigate = useNavigate();
           } else if(string){
             let serverResponse = await axios({
               method: 'GET',
-              url: `http://localhost:5000/search?location=${string}&type=${accomodation_type}&guest=${guests}`
+              url: `/search?location=${string}&type=${accomodation_type}&guest=${guests}`
             });
             console.log(serverResponse.data);
             let data = serverResponse.data
