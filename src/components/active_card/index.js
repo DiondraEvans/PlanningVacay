@@ -122,7 +122,7 @@ console.log(optionsVisible)
     <div className="active_card">
       <div className="title-ellipsis">
         <h2 className="tripName">{tripObject.tripName}</h2>
-          <div class="container">
+          <div class="activecard-container">
         <div class="ellipsis" onClick={toggleOptions} >
           <span></span>
           <span></span>
