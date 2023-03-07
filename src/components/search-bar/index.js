@@ -41,7 +41,7 @@ const navigate = useNavigate();
       // if we don't prevent the default, the page will refresh
       // call express server with the string
       
-      makeServerCall(searchString, selectedOption, guestAmount )
+      makeServerCall(searchString, selectedOption)
       console.log(guestAmount)
      
       navigate("/:search");
@@ -60,7 +60,7 @@ const navigate = useNavigate();
       // if(numberOfGuests < serverResponse.data.max_guests)
       //pull the data out of the response. setcarddata can not take an object only an array. and not an array of objects but an array of components so map through using a card as a structure for what we want to show up on our page
     
-      const makeServerCall = async (string, accomodation_type, guests) => {
+      const makeServerCall = async (string, accomodation_type) => {
         console.log(string)
         try {
           if(!string){
