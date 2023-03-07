@@ -30,7 +30,7 @@ function ActiveCard(props) {
         try {
           let serverResponse = await axios({
             method: 'GET',
-            url: `http://localhost:5000/single/${id}`
+            url: `/single/${id}`
           });
           console.log(serverResponse.data);
           let data = serverResponse.data;
@@ -97,7 +97,7 @@ function ActiveCard(props) {
     })
     const makeCallToUpdate = async() =>{
       try {
-        let serverResponse = await axios.put(`http://localhost:5000/update_trip/${trip}`, updates)
+        let serverResponse = await axios.put(`/update_trip/${trip}`, updates)
         console.log(serverResponse.data)
       } catch (error) {
         console.log(error.message)
@@ -114,7 +114,7 @@ function ActiveCard(props) {
     const makeCallToServer = async() =>{
     let serverResponse = await axios({
     method: 'DELETE',
-    url: `http://localhost:5000/delete/${trip}`
+    url: `/delete/${trip}`
   })
   console.log(serverResponse.data);
   let data = serverResponse.data

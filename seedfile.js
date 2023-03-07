@@ -5,7 +5,8 @@ const accomodation = require('./models/accomodations');
 (async function() {
   await accomodation.deleteMany({});
   const accomodations = await accomodation.create([
-    {accomodation_name: "NEW! Updated Atlanta Home ~ 3 Mi to Downtown!", price: 830, city:"Atlanta", country: "United States", bedrooms: 4,
+    {accomodation_name: "NEW! Updated Atlanta Home ~ 3 Mi to Downtown!", 
+    price: 830, city:"Atlanta", country: "United States", bedrooms: 4,
     baths: 2.5, bed: 5,img: "https://a0.muscache.com/im/pictures/prohost-api/Hosting-834028417480921980/original/e9411751-0f0e-4d8b-8adb-22946a0ea9a5.jpeg?im_w=1200",
     img2: "https://a0.muscache.com/im/pictures/prohost-api/Hosting-834028417480921980/original/301339b4-ace0-4215-a951-85e048f3ea8d.jpeg?im_w=720",
     img3: "https://a0.muscache.com/im/pictures/prohost-api/Hosting-834028417480921980/original/355208b7-94ff-41bf-8cfc-9d6dc2a21df9.jpeg?im_w=720",
