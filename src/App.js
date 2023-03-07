@@ -23,15 +23,15 @@ function App() {
   //automatic api cal will not be made to the server to generate data using useEffect unless there is no parameter in the URL. the issue i was having before is that useNavigate
   //was unmounting my App.js and when I return back to it useEffect would do an api call because it was being mounted again when my app.js was back on my DOM.
   //so to fix that i used a parameter to navigate back to the app.js and if that parameter is present when use effect runs, it will not make an automatic api call.
-    useEffect(() => {
-    if(!search){
-      const makeServerCall = async (string) => {
-        let serverResponse = await axios({
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios({
           method: 'GET',
           url: `http://localhost:5000/search?location=${string}&type=home&guest=2`
         });
-        console.log(serverResponse.data);
-        let data = serverResponse.data
+        console.log(response.data);
+        let data = response.data
         let arrayOfCards = data.map((cardObject, index) => {
           console.log(cardObject.city)
           return (
@@ -41,13 +41,15 @@ function App() {
           )
         })
         setcarddata(arrayOfCards)
+      } catch (error) {
+        console.error(error);
       }
-     
-        makeServerCall("Atlanta")
-    
-      }   
-    },[])
-    
+    }
+  
+    if (!search) {
+      fetchData();
+    }
+  }, []);
  
      
   

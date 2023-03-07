@@ -53,51 +53,59 @@ const navigate = useNavigate();
  //then we will get a reponse back of objects that we have to map through. when we go through each object, we will pull elements we wants displayed in our card.
  //this will be saved to our state called setcarddata. setcarddata will be an array we have access to throughout the app.
 
- const makeServerCall = async (string, accomodation_type, guests) => {
-  console.log(string)
+ 
       //made a if statement that says if a string giving us a location AND a type isnt passed in then default to searching for homes in atlanta
       //because type will always be passed in because of the state being set to "home", i'm going to omitt
       //the type having to be passed in, only if we do not have a string passed in will we default to atlanta homes
       // if(numberOfGuests < serverResponse.data.max_guests)
-      if(!string){
-        let serverResponse = await axios({
-          method: 'GET',
-          url: 'http://localhost:5000/search?location=Atlanta&type=home&guest=2'
-      });
-      console.log(serverResponse.data);
-      let data = serverResponse.data
-      let arrayOfCards = data.map((cardObject, index)=>{
-        console.log(cardObject.city)
-          return(
-          <Link to ={`/single/${cardObject._id}`}  key={cardObject._id}>
-            <Card key={index} cardObject={cardObject} />
-          </Link>) 
-          })
-      setcarddata(arrayOfCards)
-      setSearchString('');
-      }else if(string){
-        let serverResponse = await axios({
-          method: 'GET',
-          url: `http://localhost:5000/search?location=${string}&type=${accomodation_type}&guest=${guests}`
-
-      });
       //pull the data out of the response. setcarddata can not take an object only an array. and not an array of objects but an array of components so map through using a card as a structure for what we want to show up on our page
-      
-      console.log(serverResponse.data);
-      let data = serverResponse.data
-      let searchInput = data.map((cardObject, index)=>{
-        console.log(cardObject.city)
-          return(
-          <Link to ={`/single/${cardObject._id}`} id="entire-card"  key={cardObject._id}> 
-            <Card key={index} cardObject={cardObject} />
-          </Link>) 
-          })
-      setcarddata(searchInput)
-      setSearchString('');
-    }
-      
-      
-    }
+    
+      const makeServerCall = async (string, accomodation_type, guests) => {
+        console.log(string)
+        try {
+          if(!string){
+            let serverResponse = await axios({
+              method: 'GET',
+              url: 'http://localhost:5000/search?location=Atlanta&type=home&guest=2'
+            });
+            console.log(serverResponse.data);
+            let data = serverResponse.data
+            let arrayOfCards = data.map((cardObject, index)=>{
+              console.log(cardObject.city)
+              return(
+                <Link to ={`/single/${cardObject._id}`}  key={cardObject._id}>
+                  <Card key={index} cardObject={cardObject} />
+                </Link>) 
+            })
+            setcarddata(arrayOfCards)
+            setSearchString('');
+          } else if(string){
+            let serverResponse = await axios({
+              method: 'GET',
+              url: `http://localhost:5000/search?location=${string}&type=${accomodation_type}&guest=${guests}`
+            });
+            console.log(serverResponse.data);
+            let data = serverResponse.data
+            let searchInput = data.map((cardObject, index)=>{
+              console.log(cardObject.city)
+              return(
+                <Link to ={`/single/${cardObject._id}`} id="entire-card"  key={cardObject._id}> 
+                  <Card key={index} cardObject={cardObject} />
+                </Link>) 
+            })
+            setcarddata(searchInput)
+            setSearchString('');
+          }
+        } catch (error) {
+          console.error(error)
+        }
+      }
+
+
+
+
+
+
     //showing the popup. toggle true and false shows and hides the popup
     const [showDiv, setShowDiv] = useState(false);
     function handleClick() {

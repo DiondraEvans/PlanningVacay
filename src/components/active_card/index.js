@@ -25,18 +25,22 @@ function ActiveCard(props) {
       )
     })
     let id = tripObject.id
-    useEffect(() =>{
-     const makeCallToServer = async() =>{
-      let serverResponse = await axios({
-        method: 'GET',
-        url: `http://localhost:5000/single/${id}`
-      })
-      console.log(serverResponse.data);
-      let data = serverResponse.data
-          setImage(data.img)
-    }
-    makeCallToServer();
-    },[])
+    useEffect(() => {
+      const makeCallToServer = async () => {
+        try {
+          let serverResponse = await axios({
+            method: 'GET',
+            url: `http://localhost:5000/single/${id}`
+          });
+          console.log(serverResponse.data);
+          let data = serverResponse.data;
+          setImage(data.img);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+      makeCallToServer();
+    }, []);
 
   const [optionsVisible, setOptionsVisible] = useState(false);
   const [formVisible, setFormVisible] = useState(false);
@@ -92,8 +96,12 @@ function ActiveCard(props) {
       }
     })
     const makeCallToUpdate = async() =>{
-      let serverResponse = await axios.put(`http://localhost:5000/update_trip/${trip}`, updates)
-      console.log(serverResponse.data)
+      try {
+        let serverResponse = await axios.put(`http://localhost:5000/update_trip/${trip}`, updates)
+        console.log(serverResponse.data)
+      } catch (error) {
+        console.log(error.message)
+      }
     }
     makeCallToUpdate();
     window.location.reload();
