@@ -77,6 +77,7 @@ const navigate = useNavigate();
         let serverResponse = await axios({
           method: 'GET',
           url: `http://localhost:5000/search?location=${string}&type=${accomodation_type}`
+          
       });
       //pull the data out of the response. setcarddata can not take an object only an array. and not an array of objects but an array of components so map through using a card as a structure for what we want to show up on our page
       
