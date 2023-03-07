@@ -10,7 +10,7 @@ import Card from '../card'
 import FriendsPic from "./images/friendspic.png"
 
 
-function SearchBar() {
+function SearchBar(props) {
   //will be in use later
   let { date, setDate, setcarddata } = useContext(AppContext);
   const [selectedOption, setSelectedOption] = useState("home");
@@ -59,7 +59,7 @@ const navigate = useNavigate();
       if(!string){
         let serverResponse = await axios({
           method: 'GET',
-          url: 'http://localhost:5000/search?location=Atlanta&type=home'
+          url: '/search?location=Atlanta&type=home'
       });
       console.log(serverResponse.data);
       let data = serverResponse.data

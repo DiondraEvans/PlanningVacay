@@ -3,7 +3,7 @@ import SearchBar from './components/search-bar';
 // import FilterBar from './components/filterbar';
 import CardHolder from './components/card_holder';
 import { AppContext } from './contexts/app_context';
-import { useState, useContext, useEffect, useMemo } from 'react';
+import { useState, useContext, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import Card from './components/card'
 import axios from 'axios';
@@ -13,15 +13,17 @@ import Footer from './components/footer';
 
 
 function App() {
+  let isFirstRender = useRef(true);
+  let {  names, tripName, carddata, setcarddata  } = useContext(AppContext);
  
-  let { carddata, setcarddata, names, tripName  } = useContext(AppContext);
      console.log(names)
-
+    
     useEffect(() => {
-      const makeServerCallFirstTime = async() =>{
+      if (isFirstRender.current === false){ 
+        const makeServerCallFirstTime = async() =>{
         let serverResponse = await axios({
           method: 'GET',
-          url: 'http://localhost:5000/search?location=Atlanta&type=home'
+          url: '/search?location=Atlanta&type=home'
         });
         console.log(serverResponse.data)
         let data = serverResponse.data
@@ -34,7 +36,12 @@ function App() {
           )
         })
         setcarddata(newCards)
+        console.log(carddata)
       }
+      makeServerCallFirstTime();
+    }
+     
+    },[])
       // const makeServerCall = async () => {
       //   let serverResponse = await axios({
       //     method: 'GET',
@@ -50,12 +57,12 @@ function App() {
       //       </Link>
       //     )
       //   })
-        // setcarddata("get some help")
+      //   setcarddata("get some help")
       // }
     
       // makeServerCall();
-      makeServerCallFirstTime();
-    }, []);
+      
+
 
     
 //we are setting what we will display in the cardHolder in the searchBar. searchbar now uses setcarddata because its passed down as a prop. so you can set whatever is shown 
