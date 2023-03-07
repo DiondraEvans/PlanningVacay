@@ -28,7 +28,7 @@ function App() {
       const makeServerCall = async (string) => {
         let serverResponse = await axios({
           method: 'GET',
-          url: `/search?location=${string}&type=home`
+          url: `http://localhost:5000/search?location=${string}&type=home`
         });
         console.log(serverResponse.data);
         let data = serverResponse.data
