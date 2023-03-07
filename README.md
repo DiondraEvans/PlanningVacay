@@ -1,4 +1,4 @@
-<h1>Full Stack MERN app - <b>WindBNB<b><h1>
+<h1>Full Stack MERN app - WindBNB<h1>
 <hr>
 <image src="./src/images/windbnb.png">
 <a href="https://windbnb-fv9s.onrender.com/">Check out this website</a>
