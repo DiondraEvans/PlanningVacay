@@ -14,7 +14,10 @@ function SearchBar() {
   //will be in use later
   let { date, setDate, setcarddata } = useContext(AppContext);
   const [selectedOption, setSelectedOption] = useState("home");
- 
+  const [searchString, setSearchString] = useState("")
+   
+const navigate = useNavigate();
+// const history = useHistory();
 //  from search bar
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date())
@@ -25,10 +28,7 @@ function SearchBar() {
     // tomorrow.setDate(tomorrow.getDate() + 1);
 
    
-    const [searchString, setSearchString] = useState("")
    
-const navigate = useNavigate();
-
      const handleChange = (e) =>{
       let newValue = e.target.value;
       setSearchString(newValue);
@@ -59,14 +59,14 @@ const navigate = useNavigate();
       if(!string){
         let serverResponse = await axios({
           method: 'GET',
-          url: `http://localhost:5000/search?location=Atlanta&type=home`
+          url: 'http://localhost:5000/search?location=Atlanta&type=home'
       });
       console.log(serverResponse.data);
       let data = serverResponse.data
       let arrayOfCards = data.map((cardObject, index)=>{
         console.log(cardObject.city)
           return(
-          <Link to ={`/single/${cardObject._id}`}>
+          <Link to ={`/single/${cardObject._id}`}  key={cardObject._id}>
             <Card key={index} cardObject={cardObject} />
           </Link>) 
           })
@@ -81,14 +81,14 @@ const navigate = useNavigate();
       
       console.log(serverResponse.data);
       let data = serverResponse.data
-      let arrayOfCards = data.map((cardObject, index)=>{
+      let searchInput = data.map((cardObject, index)=>{
         console.log(cardObject.city)
           return(
-          <Link to ={`/single/${cardObject._id}`} id="entire-card">
+          <Link to ={`/single/${cardObject._id}`} id="entire-card"  key={cardObject._id}> 
             <Card key={index} cardObject={cardObject} />
           </Link>) 
           })
-      setcarddata(arrayOfCards)
+      setcarddata(searchInput)
       setSearchString('');
     }
       
@@ -121,9 +121,9 @@ const navigate = useNavigate();
             <option value="home">Home</option>
             <option value="hotel">Hotel</option>
           </select>
-          <DatePicker selected={startDate} onChange={(date) => setStartDate(date)}  className="checkin" />
+          <DatePicker selected={startDate} value={startDate} onChange={(date) => setStartDate(date)}  className="checkin" />
         
-          <DatePicker selected={endDate} onChange={(date) => setStartDate(date)} className="checkout" />
+          <DatePicker selected={endDate} value={endDate} onChange={(date) => setStartDate(date)} className="checkout" />
           
           <div className="gp" onClick={handleClick}>
               <p><b>Group planning</b></p>

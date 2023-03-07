@@ -99,6 +99,7 @@ app.put('/update_trip/:id', async (req, res) => {
     console.log(response)
     res.send(response)
   });
+  
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
