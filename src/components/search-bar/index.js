@@ -2,7 +2,7 @@ import './index.css';
 import axios from 'axios';
 import { useState, useContext} from 'react';
 import { AppContext } from '../../contexts/app_context';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, redirect } from 'react-router-dom';
 import searchglass from "./images/glass.png"
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
@@ -15,7 +15,6 @@ function SearchBar(props) {
   let { date, setDate, setcarddata } = useContext(AppContext);
   const [selectedOption, setSelectedOption] = useState("home");
   const [searchString, setSearchString] = useState("")
-   
 const navigate = useNavigate();
 // const history = useHistory();
 //  from search bar
@@ -42,14 +41,16 @@ const navigate = useNavigate();
       // call express server with the string
       
       makeServerCall(searchString, selectedOption)
-      navigate('/');
+     
+      navigate("/:search");
+   
   };
  //do not use http://localhost:5000/search etc because you will not get a response.
  //also make a build folder when you start a project, it allows for the local host to 
  //this will make a call to the serve with the string we want to search for as a parameter
  //then we will get a reponse back of objects that we have to map through. when we go through each object, we will pull elements we wants displayed in our card.
  //this will be saved to our state called setcarddata. setcarddata will be an array we have access to throughout the app.
-     
+
  const makeServerCall = async (string, accomodation_type) => {
   console.log(string)
       //made a if statement that says if a string giving us a location AND a type isnt passed in then default to searching for homes in atlanta

@@ -8,3 +8,10 @@
 #invite-input{
     margin-top: 95px;
 }
+#submit-form-invite{
+    margin-top: 30px;
+    padding: 10px;
+}
+#inputs:focus-visible{
+        outline: 3px solid #38B7FF;
+}

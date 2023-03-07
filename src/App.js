@@ -4,7 +4,7 @@ import SearchBar from './components/search-bar';
 import CardHolder from './components/card_holder';
 import { AppContext } from './contexts/app_context';
 import { useState, useContext, useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Card from './components/card'
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
@@ -13,54 +13,44 @@ import Footer from './components/footer';
 
 
 function App() {
-  let isFirstRender = useRef(true);
-  let {  names, tripName, carddata, setcarddata  } = useContext(AppContext);
  
+  let {  names, tripName, carddata, setcarddata  } = useContext(AppContext);
+  const mounted = useRef(false);
      console.log(names)
-    
+    let {search} = useParams();
+  //useEffect will run no matter what when it is first mounted. because we have a conditional sayin gif we are searching using our search bar
+  //from the single vacation page and it will direct us back to the home page with a parameter, if that parameter is present in the search bar an 
+  //automatic api cal will not be made to the server to generate data using useEffect unless there is no parameter in the URL. the issue i was having before is that useNavigate
+  //was unmounting my App.js and when I return back to it useEffect would do an api call because it was being mounted again when my app.js was back on my DOM.
+  //so to fix that i used a parameter to navigate back to the app.js and if that parameter is present when use effect runs, it will not make an automatic api call.
     useEffect(() => {
-      if (isFirstRender.current === false){ 
-        const makeServerCallFirstTime = async() =>{
+    if(!search){
+      const makeServerCall = async (string) => {
         let serverResponse = await axios({
           method: 'GET',
-          url: '/search?location=Atlanta&type=home'
+          url: `/search?location=${string}&type=home`
         });
-        console.log(serverResponse.data)
+        console.log(serverResponse.data);
         let data = serverResponse.data
-        let newCards = data.map((cardObject, index) =>{
+        let arrayOfCards = data.map((cardObject, index) => {
           console.log(cardObject.city)
-          return(
+          return (
             <Link to={`/single/${cardObject._id}`} key={index}>
-            <Card key={cardObject._id} cardObject={cardObject}/>
+              <Card key={cardObject._id} cardObject={cardObject} />
             </Link>
           )
         })
-        setcarddata(newCards)
-        console.log(carddata)
+        setcarddata(arrayOfCards)
       }
-      makeServerCallFirstTime();
-    }
      
-    },[])
-      // const makeServerCall = async () => {
-      //   let serverResponse = await axios({
-      //     method: 'GET',
-      //     url: `/search?location=Atlanta&type=home`
-      //   });
-      //   console.log(serverResponse.data);
-      //   let data = serverResponse.data
-      //   let arrayOfCards = data.map((cardObject, index) => {
-      //     console.log(cardObject.city)
-      //     return (
-      //       <Link to={`/single/${cardObject._id}`} key={index}>
-      //         <Card key={cardObject._id} cardObject={cardObject} />
-      //       </Link>
-      //     )
-      //   })
-      //   setcarddata("get some help")
-      // }
+        makeServerCall("Atlanta")
     
-      // makeServerCall();
+      }   
+    },[])
+    
+ 
+     
+  
       
 
 
@@ -76,7 +66,7 @@ function App() {
       {tripName ? <h2>Your trip: {tripName}</h2> : ""}
       <SearchBar />
       {/* <FilterBar /> */}
-      <CardHolder carddata={carddata} />
+      <CardHolder carddata={carddata} setcarddata={setcarddata}/>
       <Footer />
     </div>
   );

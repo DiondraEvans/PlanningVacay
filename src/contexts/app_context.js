@@ -6,7 +6,7 @@ export const AppContext = createContext();
 const AppContextProvider = (props) => {
     // put our state
 
-    const [carddata, setcarddata] = useState("");
+    const [carddata, setcarddata] = useState([]);
     const [accomodation, setAccomodation] = useState("")
     const [tripName, setName] = useState('');
     const [date, setDate] = useState('');
