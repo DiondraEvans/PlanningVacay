@@ -24,11 +24,11 @@ const [price, setPrice] = useState(0);
 
 return (
      <div className="card-body" >
-      <img src={cardObject.image_url} className="api-img"></img>
-      <p>{cardObject.city_name}</p>
-      <p>{cardObject.region}</p>
-      <p>{randomNumber} nights  · Mar 6 – 11 </p>
-      <p>${price}</p>
+      <img src={cardObject.img} className="api-img"></img>
+      <p>{cardObject.accomodation_name}</p>
+      <p>{cardObject.city}</p>
+      <p>{cardObject.country}</p>
+      <p>${cardObject.price}</p>
      </div>  
       
 );

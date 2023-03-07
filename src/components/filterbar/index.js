@@ -1,4 +1,4 @@
-import './index.css';
+import '../filterbar/index.css';
 import Cabins from './images/image1.png'
 import Amazingviews from './images/image2.png'
 import Omg from './images/image3.png'
@@ -17,7 +17,7 @@ import Amazingpools from './images/image14.png'
 function GetFilterBar() {
 
   return (
-    <div className="container">
+    <div className="filter-container">
       <div>
         <img src={Cabins} className="f-pic"></img>
         <p></p>

@@ -1,9 +1,25 @@
 *{
-  margin: 0;
+ margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.App {
+.coin{
+  width: 200px;
+  height: 200px;
+  animation: animate 3s linear 0s infinite, paused 4s linear 3s infinite;
+  
+  perspective: 800px;
+}
+@keyframes animate {
+0%{
+ transform: rotateY(0deg);
+}
+100%{
+  transform: rotateY(360deg);
+}
+}
+.App { 
+  
   text-align: center;
 }
 

@@ -1,0 +1,10 @@
+.summary{
+    height: 200px;
+    width: 400px;
+   overflow-y:scroll;
+   padding: 20px 10px 10px; /* set top padding to move text cursor to the top */
+
+}
+#invite-input{
+    margin-top: 95px;
+}

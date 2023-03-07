@@ -1,0 +1,16 @@
+.active{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.active_grid{
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin-top: 3rem;
+}
+.active_grid div{
+     margin: auto;
+}

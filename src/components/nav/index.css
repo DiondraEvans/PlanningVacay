@@ -1,17 +1,24 @@
-.nav{
-    border: 1px solid black;
+.navbar{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     padding: 30px;
+    width: 100%;
 }
 .links{
     display: flex;
     flex-direction: row;
     margin: auto;
 }
-li{
+.navbar li{
     list-style-type: none;
     margin-left: 30px;
+}
+.navbar a:hover{
+    list-style-type: none;
+    color: #38B7FF;
+}
+.account p{
+    width: 153px;
 }

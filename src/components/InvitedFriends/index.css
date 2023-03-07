@@ -1,0 +1,16 @@
+.box{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 400px;
+}
+
+.invited_friendsbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 400px;
+    padding-top: 20px;;
+}
+.list-items li{
+    list-style: none;
+}

@@ -1,3 +1,7 @@
+#entire-card{
+    justify-self: center;
+    align-self: center;
+}
 .search-area{
     display: flex;
     flex-direction: column;
@@ -5,21 +9,44 @@
     align-items: center;
     margin-top: 50px;
 }
-.invitefriendspopup{
+.invitefriendspopup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     position: absolute;
     width: 300px;
     height: 300px;
     background-color: white;
-    top: 200px;
-    left: 1038px;
+    top: 33%;
+    left: 60%;
     border-radius: 12px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
     text-align: left;
     padding: 15px;
+
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    
+    border-radius: 12px;
+    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+    text-align: left;
+    padding: 15px;
+    right: -296px; */
+}
+.friendspic{
+    width: 16rem;
+}
+.friendsletters{
+    letter-spacing: .3rem;
+    text-align: center;
 }
 .invitenow{
-    background-color: #FF385C;
-    margin-top: 190px;
+    background-color: #38B7FF;
     border-radius: 12px;
     width: 17rem;
     height: 2.6rem;
@@ -29,14 +56,14 @@
     cursor: pointer;
 }
 .bar{
-    width: 836.56px;
+    width: 986.56px;
     border-radius: 69px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     background-color: #DDDDDD;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
 }
 .where{
     border: none;
@@ -47,8 +74,8 @@
     text-align: center;
     background-color: #DDDDDD;
 }
-.where:active{
-    background-color: #CDEADF;
+.where:focus{
+    background-color: #fff;
     text-align: left;
     flex-grow: 2;
     border-radius: 69px;
@@ -63,6 +90,29 @@
     height: 53px;
     text-align: center;
 }
+.dropdown{
+    border-radius: 22px;
+    text-align: center;
+    height: 53px;
+    border: none;
+    background-color: #DDDDDD;
+    color: grey;
+    border: none;
+}
+.dropdown:focus{
+    background-color: #fff;
+    text-align: center;
+    border-radius: 22px;
+    height: 53px;
+    border: none;
+}
+.dropdown:hover{
+    background-color: #fff;
+    text-align: center;
+    border-radius: 22px;
+    height: 53px;
+    border: none;
+}
 .react-datepicker-wrapper {
     display: inline-block;
     padding: 0;
@@ -76,8 +126,8 @@
     border: none;
     background-color: #DDDDDD;
 }
-.checkin:active{
-    background-color: #CDEADF;
+.checkin:focus{
+    background-color: #fff;
     border-radius: 69px;
     text-align: center;
     height: 53px;
@@ -95,8 +145,8 @@
     border: none;
     background-color: #DDDDDD;
 }
-.checkout:active{
-    background-color: #CDEADF;
+.checkout:focus{
+    background-color: #fff;
     border-radius: 69px;
     text-align: center;
     height: 53px;
@@ -120,8 +170,8 @@
     background-color: #DDDDDD;
     cursor: pointer;
 }
-.gp:active{
-    background-color: #CDEADF;
+.gp:focus{
+    background-color: #fff;
     text-align: center;
     height: 53px;
     border-radius: 69px;
@@ -152,8 +202,8 @@
     flex-grow: 1;
     background-color: #DDDDDD;
 }
-.guests:active{
-    background-color: #CDEADF;
+.guests:focus{
+    background-color: #fff;
     text-align: center;
     height: 53px;
     border-radius: 69px;
@@ -167,7 +217,7 @@
     flex-grow: 1;
 }
 .search-btn{
-    background-color: #FF385C;
+    background-color: #38B7FF;
     text-align: center;
     height: 53px;
     width: 53px;

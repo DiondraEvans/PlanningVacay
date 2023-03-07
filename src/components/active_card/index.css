@@ -1,0 +1,182 @@
+.active_card{
+    width: 300px;
+    height: max-content;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: none;
+    padding-top: 30px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+.title-ellipsis{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 14px;
+}
+.info-box{
+    padding: 14px;
+}
+.friends_invited{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 100%;
+}
+.tripName{
+    text-align: center;
+}
+.friendlist{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 100%;
+  flex-wrap: wrap;
+  height: 60px;
+}
+.friendlist li{
+    list-style-type: none;
+}
+.options-ul li{
+    margin: 0;
+    list-style-type: none;
+}
+.date-price{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 16rem;
+    padding-top: 10px;
+}
+.summary_box{
+    padding-top: 16px;
+}
+#img{
+    width: 100%;
+    height: 10rem;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+
+/* styling for the ellipsis */
+.container {
+    position: relative;
+    margin: 0;
+    width: 51px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border: none;
+  }
+  
+  .ellipsis {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    position: relative;
+  }
+  
+  .ellipsis span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 3px;
+    background-color: black;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+  }
+  
+  .ellipsis span:nth-child(1) {
+    top: 0;
+  }
+  
+  .ellipsis span:nth-child(2),
+  .ellipsis span:nth-child(3) {
+    top: 6px;
+  }
+  
+  .ellipsis span:nth-child(3) {
+    top: 12px;
+  }
+  
+  .options {
+    position: absolute;
+    top: 40px;
+    right: -33px;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+    border-radius: 5px;
+  }
+  
+  .options ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .options ul li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .options ul li:hover {
+    background-color: #f6f6f6;
+  }
+  .updatingForm{
+    padding: 30px;
+    position: absolute;
+    top: -34px;
+    left: 45px;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+    border-radius: 5px;
+  }
+  .updatingForm input,textarea{
+    margin-top: 20px;
+  }
+  .cancel{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .cancel p{
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+  }
+  .submit-update{
+    color: #38B7FF;
+    background-color:white;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+  }
+  .invitebtn{
+    background-color: #38B7FF;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+  }

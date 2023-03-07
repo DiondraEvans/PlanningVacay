@@ -1,15 +1,19 @@
 import './index.css';
+import Image from '../nav/images/windbnb_logo.png'
+import { Link, useNavigate } from 'react-router-dom';
 import React from 'react';
 function Nav() {
 
   return (
-    <div className="nav">
+    <div className="navbar">
       <div className="logo">
-        <p>Logo</p>
+        <Link to ={`/`}>
+          <img src={Image} style={{width: "120px", height: "79px"}}></img>
+        </Link>
       </div>
       <ul className="links">
-        <li>Places to stay</li>
-        <li>Experiences</li>
+        <li><Link to={'/'}>Home</Link></li>
+        <li><Link to={'/activetrips'}>Active trips</Link></li>
         <li>Online Experiences</li>
       </ul>
       <div className="account">

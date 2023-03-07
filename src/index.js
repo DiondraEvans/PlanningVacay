@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Tripdetails from './pages/Trip-details-and-invite';
-import Pickvacationspot from './pages/Pick_Vacation_Spot'
-import HotelOptions from "./pages/Hotel_Options"
+import SingleVacation from "./pages/Single_Vacation"
 import Activetrips from './pages/Active-trips'
 import reportWebVitals from './reportWebVitals';
 import ContextProvider from './contexts/app_context';
@@ -12,23 +11,20 @@ import {
   createBrowserRouter,
   RouterProvider
 } from "react-router-dom";
+import Footer from './components/footer';
 const router = createBrowserRouter([
   
   {
     path: "/",
-    element: <App />,
+    element: <App />
   },
   {
     path: "/tripdetails",
-    element: <Tripdetails />,
+    element: <Tripdetails />
   },
   {
-    path: "/pickvacationspot",
-    element: <Pickvacationspot />
-  },
-  {
-    path: "/hotelOptions/:id",
-    element: <HotelOptions  />
+    path: "/single/:id",
+    element: <SingleVacation  />
   },
   {
     path: "/activetrips",
