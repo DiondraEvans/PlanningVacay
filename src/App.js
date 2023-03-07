@@ -24,11 +24,11 @@ function App() {
   //was unmounting my App.js and when I return back to it useEffect would do an api call because it was being mounted again when my app.js was back on my DOM.
   //so to fix that i used a parameter to navigate back to the app.js and if that parameter is present when use effect runs, it will not make an automatic api call.
   useEffect(() => {
-    const fetchData = async (string) => {
+    const fetchData = async () => {
       try {
         const response = await axios({
           method: 'GET',
-          url: `http://localhost:5000/search?location=${string}&type=home&guest=2`
+          url: `http://localhost:5000/search?location=Atlanta&type=home&guest=2`
         });
         console.log(response.data);
         let data = response.data
