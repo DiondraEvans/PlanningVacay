@@ -44,9 +44,8 @@ app.get('/test_route', (req, res) => {
 app.get('/search', async (req, res) => {
     let where = req.query.location
     let type = req.query.type
-    let guests = req.query.guest
     //doing greater than the number the user inputs means they will get the amount of room needed for the amount of people coming
-    let data = await accomodation.find({"city": where, "type": type, "max_guests": {$gt : guests}})
+    let data = await accomodation.find({"city": where, "type": type})
     console.log(data)
     res.send(data)
 })

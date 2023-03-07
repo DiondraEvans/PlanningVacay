@@ -28,7 +28,7 @@ function App() {
       try {
         const response = await axios({
           method: 'GET',
-          url: '/search?location=Atlanta&type=home&guest=2'
+          url: '/search?location=Atlanta&type=home'
         });
         console.log(response.data);
         let data = response.data
