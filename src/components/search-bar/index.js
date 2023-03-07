@@ -17,8 +17,7 @@ function SearchBar(props) {
   const [searchString, setSearchString] = useState("")
   const [guestAmount, setGuestAmount] = useState()
 const navigate = useNavigate();
-// const history = useHistory();
-//  from search bar
+
     const [startDate, setStartDate] = useState(new Date());
  
     // Create a new Date object

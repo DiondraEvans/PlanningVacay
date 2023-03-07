@@ -18,7 +18,7 @@ function App() {
   const mounted = useRef(false);
      console.log(names)
     let {search} = useParams();
-  //useEffect will run no matter what when it is first mounted. because we have a conditional sayin gif we are searching using our search bar
+  //useEffect will run no matter what when it is first mounted. because we have a conditional saying if we are searching using our search bar
   //from the single vacation page and it will direct us back to the home page with a parameter, if that parameter is present in the search bar an 
   //automatic api cal will not be made to the server to generate data using useEffect unless there is no parameter in the URL. the issue i was having before is that useNavigate
   //was unmounting my App.js and when I return back to it useEffect would do an api call because it was being mounted again when my app.js was back on my DOM.
@@ -67,7 +67,6 @@ function App() {
       <Nav />
       {tripName ? <h2>Your trip: {tripName}</h2> : ""}
       <SearchBar />
-      {/* <FilterBar /> */}
       <CardHolder carddata={carddata} setcarddata={setcarddata}/>
       <Footer />
     </div>

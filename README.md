@@ -1,5 +1,12 @@
 <h1>Full Stack MERN app - WindBNB</h1>
 <hr>
+<h2>Tools used:</h2>
+<ul>
+<li>Mongo DB</li>
+<li>Express</li>
+<li>React</li>
+<li>Node.js</li>
+</ul>
 <image src="./src/images/windbnb.png">
 <a href="https://windbnb-zd7l.onrender.com/">Check out this website</a>
 <p>
@@ -11,7 +18,7 @@ which you will find on the search bar where it says "Group Planning" from there,
 <ol>
     <li>Head to the search bar and click on "Group Planning" to access the group planning section on the website.</li>
     <li>Fill in your details and invite your closest friends to join in on the fun.</li>
-    <li>Once you've finished inviting your friends, click "Next Page" to select your vacation spot. Windbnb currently offers three amazing <b>locations to choose from: Atlanta, New Orleans, and California.</b></li>
+    <li>Once you've finished inviting your friends, click "Next Page" to select your vacation spot. You will pick the spot nce you press the blue reserve button. Windbnb currently offers three amazing <b>locations to choose from: Atlanta, New Orleans, and California.</b></li>
     <li>Want to update your trip details? No problem. Navigate to the "Active Trips" section on the navigation bar, choose your desired trip, and click on the three circles on the top right-hand corner of the card to edit your information.</li>
     <li>Need to cancel your trip? Simply click on the delete button on your active trip card and voila! Your trip is canceled.</li>
 </ol>
