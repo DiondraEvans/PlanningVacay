@@ -15,6 +15,7 @@ function SearchBar(props) {
   let { date, setDate, setcarddata } = useContext(AppContext);
   const [selectedOption, setSelectedOption] = useState("home");
   const [searchString, setSearchString] = useState("")
+  const [guestAmount, setGuestAmount] = useState(0)
 const navigate = useNavigate();
 // const history = useHistory();
 //  from search bar
@@ -40,7 +41,8 @@ const navigate = useNavigate();
       // if we don't prevent the default, the page will refresh
       // call express server with the string
       
-      makeServerCall(searchString, selectedOption)
+      makeServerCall(searchString, selectedOption, guestAmount )
+      console.log(guestAmount)
      
       navigate("/:search");
    
@@ -51,7 +53,7 @@ const navigate = useNavigate();
  //then we will get a reponse back of objects that we have to map through. when we go through each object, we will pull elements we wants displayed in our card.
  //this will be saved to our state called setcarddata. setcarddata will be an array we have access to throughout the app.
 
- const makeServerCall = async (string, accomodation_type) => {
+ const makeServerCall = async (string, accomodation_type, guests) => {
   console.log(string)
       //made a if statement that says if a string giving us a location AND a type isnt passed in then default to searching for homes in atlanta
       //because type will always be passed in because of the state being set to "home", i'm going to omitt
@@ -60,7 +62,7 @@ const navigate = useNavigate();
       if(!string){
         let serverResponse = await axios({
           method: 'GET',
-          url: 'http://localhost:5000/search?location=Atlanta&type=home'
+          url: 'http://localhost:5000/search?location=Atlanta&type=home&guest=2'
       });
       console.log(serverResponse.data);
       let data = serverResponse.data
@@ -76,8 +78,8 @@ const navigate = useNavigate();
       }else if(string){
         let serverResponse = await axios({
           method: 'GET',
-          url: `http://localhost:5000/search?location=${string}&type=${accomodation_type}`
-          
+          url: `http://localhost:5000/search?location=${string}&type=${accomodation_type}&guest=${guests}`
+
       });
       //pull the data out of the response. setcarddata can not take an object only an array. and not an array of objects but an array of components so map through using a card as a structure for what we want to show up on our page
       
@@ -133,7 +135,7 @@ const navigate = useNavigate();
           </div>
           
           <label>
-          <input type="text" name="guestnumber" placeholder='Add # of guests' className="guests"/>
+          <input type="text" name="guestnumber" placeholder='Add # of guests' className="guests" value={guestAmount} onChange={event => {setGuestAmount(event.target.value)}}/>
           </label>
 
           <button className="search-btn"><img src={searchglass}></img></button>
