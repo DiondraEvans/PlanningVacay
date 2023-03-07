@@ -1,7 +1,7 @@
 <h1>Full Stack MERN app - WindBNB</h1>
 <hr>
 <image src="./src/images/windbnb.png">
-<a href="https://windbnb-fv9s.onrender.com/">Check out this website</a>
+<a href="https://windbnb-zd7l.onrender.com/">Check out this website</a>
 <p>
 Experience the ultimate vacation with our latest website called Windbnb! 
 Planning a trip has never been easier - simply head to the group planning section on the website, 
