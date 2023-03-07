@@ -150,6 +150,9 @@
   .updatingForm input,textarea{
     margin-top: 20px;
   }
+  .updatingForm input:focus, textarea:focus{
+   outline: 3px solid #38B7FF;
+  }
   .cancel{
     width: 100%;
     display: flex;
