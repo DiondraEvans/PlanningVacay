@@ -11,7 +11,7 @@ const [activeCards, setActiveCards] = useState("")
   const makeServerCall = async () => {
     let serverResponse = await axios({
         method: 'GET',
-        url: `http://localhost:5000/get_trips`
+        url: `/get_trips`
     });
     console.log(serverResponse)
     let dataRetrieved = serverResponse.data

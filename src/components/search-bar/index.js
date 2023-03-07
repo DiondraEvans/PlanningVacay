@@ -15,17 +15,17 @@ function SearchBar(props) {
   let { date, setDate, setcarddata } = useContext(AppContext);
   const [selectedOption, setSelectedOption] = useState("home");
   const [searchString, setSearchString] = useState("")
-  const [guestAmount, setGuestAmount] = useState(0)
+  const [guestAmount, setGuestAmount] = useState()
 const navigate = useNavigate();
 // const history = useHistory();
 //  from search bar
     const [startDate, setStartDate] = useState(new Date());
-    const [endDate, setEndDate] = useState(new Date())
-    // // Create a new Date object
-    // const tomorrow= new Date();
-    // setEndDate(tomorrow)
-    // // Set the date to tomorrow
-    // tomorrow.setDate(tomorrow.getDate() + 1);
+ 
+    // Create a new Date object
+    const tomorrow= new Date();
+   // Set the date to tomorrow
+    tomorrow.setDate(tomorrow.getDate() + 1);
+     const [endDate, setEndDate] = useState(tomorrow)
 
    
    
@@ -41,7 +41,7 @@ const navigate = useNavigate();
       // if we don't prevent the default, the page will refresh
       // call express server with the string
       
-      makeServerCall(searchString, selectedOption)
+      makeServerCall(searchString, selectedOption, guestAmount)
       console.log(guestAmount)
      
       navigate("/:search");
@@ -60,13 +60,13 @@ const navigate = useNavigate();
       // if(numberOfGuests < serverResponse.data.max_guests)
       //pull the data out of the response. setcarddata can not take an object only an array. and not an array of objects but an array of components so map through using a card as a structure for what we want to show up on our page
     
-      const makeServerCall = async (string, accomodation_type) => {
+      const makeServerCall = async (string, accomodation_type, guest) => {
         console.log(string)
         try {
           if(!string){
             let serverResponse = await axios({
               method: 'GET',
-              url: '/search?location=Atlanta&type=home'
+              url: '/search?location=Atlanta&type=home&guest=2'
             });
             console.log(serverResponse.data);
             let data = serverResponse.data
@@ -82,7 +82,7 @@ const navigate = useNavigate();
           } else if(string){
             let serverResponse = await axios({
               method: 'GET',
-              url: `/search?location=${string}&type=${accomodation_type}`
+              url: `/search?location=${string}&type=${accomodation_type}&guest=${guest}`
             });
             console.log(serverResponse.data);
             let data = serverResponse.data
@@ -135,7 +135,7 @@ const navigate = useNavigate();
           </select>
           <DatePicker selected={startDate} value={startDate} onChange={(date) => setStartDate(date)}  className="checkin" />
         
-          <DatePicker selected={endDate} value={endDate} onChange={(date) => setStartDate(date)} className="checkout" />
+          <DatePicker selected={endDate} value={endDate} onChange={(date) => setEndDate(date)} className="checkout" />
           
           <div className="gp" onClick={handleClick}>
               <p><b>Group planning</b></p>

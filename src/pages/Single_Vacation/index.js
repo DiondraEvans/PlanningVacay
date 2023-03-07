@@ -20,7 +20,7 @@ function GetSingleData() {
     const makeServerCall = async () => {
     let serverResponse = await axios({
         method: 'GET',
-        url: `http://localhost:5000/single/${id}`
+        url: `/single/${id}`
     });
     console.log(serverResponse.data)
     let data = serverResponse.data
