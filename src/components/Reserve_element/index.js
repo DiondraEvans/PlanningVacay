@@ -24,16 +24,20 @@ function GetReservedTrip(props) {
         price
         }
         const makePost = async () => {
-            let serverResponse = await axios({
-                method: 'POST',
-                url: "/create_trip",
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                data: JSON.stringify(trip)
-            });
-            console.log(serverResponse)
-        }
+            try {
+                let serverResponse = await axios({
+                    method: 'POST',
+                    url: "/create_trip",
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    data: JSON.stringify(trip)
+                });
+                console.log(serverResponse)
+            } catch (error) {
+                console.error(error);
+            }
+        };
         makePost();
         //reset values here:
         setName("")
