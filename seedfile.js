@@ -1,7 +1,7 @@
 require('dotenv').config();
 require('./server.js');
 const accomodation = require('./models/accomodations');
-
+//to upload seedfile, run node seedfile.js in the terminal
 (async function() {
   await accomodation.deleteMany({});
   const accomodations = await accomodation.create([
@@ -188,6 +188,47 @@ const accomodation = require('./models/accomodations');
     description: "Rooms at the Hollywood Historic Hotel feature the original fixtures from when the hotel was built in 1927. They also include a refrigerator, a TV with premium channels, ironing facilities, free bottled water, black out drapes, and an in-room coffee machine and coffee. Pillow-top mattresses offer additional comfort. A work desk is also provided.You will find a 24 hour front desk a the property. Guests can relax at the Edmon, an Old Hollywood 1920s bar, serving craft cocktails.",
     max_guests: 2,
     type: "hotel"},
+
+    {accomodation_name: "Disney Pvt. Pool Golf Resort", price: 162 , city:"Florida", country: "United States", bedrooms: 1,
+    baths: 1, bed: 1,
+    img: "https://a0.muscache.com/im/pictures/miso/Hosting-704224620083970451/original/2b6e700c-5f6c-476b-8430-a3006fe7d821.jpeg?im_w=1200",
+    img2: "https://a0.muscache.com/im/pictures/miso/Hosting-704224620083970451/original/3858f450-8e3b-46c2-b43a-052e0fc4122f.jpeg?im_w=720",
+    img3: "https://a0.muscache.com/im/pictures/miso/Hosting-704224620083970451/original/8108e6da-cae9-41bb-9854-2949b366ae5a.jpeg?im_w=720",
+    img4: "https://a0.muscache.com/im/pictures/miso/Hosting-704224620083970451/original/b57e3758-c894-44e9-8800-674e3d821afd.jpeg?im_w=720",
+    img5: "https://a0.muscache.com/im/pictures/miso/Hosting-704224620083970451/original/aeddd601-21b3-447c-bb81-dcc9cb6c9a80.jpeg?im_w=720",
+    description: "Brand New, 5 bedroom, 3 bath, Private Heated Pool and Spa, Stainless Steel Appliances, Fiber Optic High Speed Wifi for remote work, Hair dryers in all bathrooms, Remodeled with many upgrades. Sleeps up to 14, 3 Full Bathrooms. Smart TVs in all bedrooms all brand new memory foam mattresses. Stainless steel Appliances, Golf course, Tennis Court. 15 minutes to Disney parks, 60 minutes to beaches & Kennedy Space Center/Cape Canaveral. Fully equipped kitchen. ",
+    max_guests: 14,
+    type: "home"},
+    {accomodation_name: "LAKE FRONT Storey Lake", price: 264 , city:"Florida", country: "United States", bedrooms: 9,
+    baths: 5, bed: 13,
+    img: "https://a0.muscache.com/im/pictures/miso/Hosting-46116671/original/24a92d9e-6c20-4f88-a542-4c8eeaadee8b.jpeg?im_w=1200",
+    img2: "https://a0.muscache.com/im/pictures/miso/Hosting-46116671/original/2cf2fc62-3fa4-4a82-b757-50cd24256197.jpeg?im_w=720",
+    img3: "https://a0.muscache.com/im/pictures/miso/Hosting-46116671/original/1cfc65dc-dd0c-40cc-83e4-9815b8ca1630.jpeg?im_w=720",
+    img4: "https://a0.muscache.com/im/pictures/miso/Hosting-46116671/original/fae3c663-8a38-4305-980b-dafc9c2a24dc.jpeg?im_w=720",
+    img5: "https://a0.muscache.com/im/pictures/miso/Hosting-46116671/original/221a8259-32e2-4cf9-a2e4-f54a53f87903.jpeg?im_w=720",
+    description: "• Community: Storey Lake • 9 Bedroom/5 Bathroom/Sleeps 24 • Disney (5 miles) • SeaWorld (7 miles) • Convention Center (9 miles) • Universal (10 miles) • Location: Stanza Court, Kissimmee FL 34746", 
+    max_guests: 16,
+    type: "home"},
+    {accomodation_name: "Live Oak Oasis on Morris Lake", price: 115 , city:"Florida", country: "United States", bedrooms: 1,
+    baths: 1, bed: 3,
+    img: "https://a0.muscache.com/im/pictures/74631be0-bee9-43a2-9626-56a96df2dead.jpg?im_w=1200",
+    img2: "https://a0.muscache.com/im/pictures/miso/Hosting-51868882/original/d2b40b90-fbbb-4a0d-b82d-b1136a8d3ea8.jpeg?im_w=720",
+    img3: "https://a0.muscache.com/im/pictures/da0435d2-b701-46e6-9620-bea4a92b5185.jpg?im_w=720",
+    img4: "https://a0.muscache.com/im/pictures/miso/Hosting-51868882/original/1af3720e-64a6-411e-af06-99a5ad85d383.jpeg?im_w=720",
+    img5: "https://a0.muscache.com/im/pictures/b66a5554-c3e3-44d4-8938-592e1b0fd324.jpg?im_w=720",
+    description: "Unspoiled nature greets your every turn at this charming 650 SF lakefront retreat. A short distance from 10 of Florida's finest 1st magnitude springs, ranging from 30 - 90 minute drive, makes the location a perfect basecamp for adventure travel. Rest beneath the shade of Live oaks that pull the breeze ashore. Enjoy Sand hill cranes and hummingbirds from the cabana. Incredible sunsets from new dock. Paddle boat & paddle boards available for adventures. WiFi, Netflix, Laundry, HOT outdoor shower!",
+    max_guests: 2,
+    type: "home"},
+    {accomodation_name: "Miami Vibe in the Heart of Cape", price: 410 , city:"Florida", country: "United States", bedrooms: 3,
+    baths: 2.5, bed: 3,
+    img: "https://a0.muscache.com/im/pictures/miso/Hosting-827402726154583914/original/c5f16789-cebe-43eb-8ddc-c2e6922c7616.jpeg?im_w=1200",
+    img2: "https://a0.muscache.com/im/pictures/miso/Hosting-827402726154583914/original/86d5977c-3db2-4058-bd79-b42beb97524e.jpeg?im_w=720",
+    img3: "https://a0.muscache.com/im/pictures/miso/Hosting-827402726154583914/original/764de37a-c6e1-402e-8883-230d4aae2249.jpeg?im_w=720",
+    img4: "https://a0.muscache.com/im/pictures/miso/Hosting-827402726154583914/original/ce53002f-cb0a-47d7-8a8e-65cf38493662.jpeg?im_w=720",
+    img5: "https://a0.muscache.com/im/pictures/miso/Hosting-827402726154583914/original/914adc1b-2d76-4fa7-9c41-f80b67dc05bb.jpeg?im_w=720",
+    description: "This home is at the hearts center of Cape Coral & features all the top-notch qualities that gives this property the luxurious lifestyle anyone here is looking for. With our heated infinity-pool to temperature controlled showers, complete surround sound, Alexa-powered home with motion censored & customizable interior lights, industrial sized kitchen with doubleoven, ice maker + many “cookers paradise” amenities. You can relax at home for hours or make it to local hotspots within a short distance.",
+    max_guests: 6,
+    type: "home"}
 
   ]);
   console.log(accomodations)
