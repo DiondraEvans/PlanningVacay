@@ -35,6 +35,8 @@ function ActiveCard(props) {
           console.log(serverResponse.data);
           let data = serverResponse.data;
           setImage(data.img);
+          console.log(data.img)
+          console.log(serverResponse.data.img)
         } catch (error) {
           console.error(error);
         }
