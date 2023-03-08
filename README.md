@@ -23,3 +23,5 @@ which you will find on the search bar where it says "Group Planning" from there,
     <li>Need to cancel your trip? Simply click on the delete button on your active trip card and voila! Your trip is canceled.</li>
 </ol>
 <p>With Windbnb, planning your dream vacation has never been easier.</p>
+<hr>
+<p>In later iterations of this app, I will include a sign up/log in feature and emailing invitations to friends to edit or propose a different trip to go on.</p>

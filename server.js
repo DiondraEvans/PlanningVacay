@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const logger = require('morgan');
+const bcrypt = require('bcrypt')
 // cross origin access 
 const cors = require('cors');
 const axios = require("axios");
@@ -35,6 +36,10 @@ mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: 
 mongoose.connection.once('open', ()=> {
     console.log('connected to mongo');
 });
+
+const passport = require('passport');
+const session = require('express-session');
+const initializePassport = require('./config/passport-config.js')
 
 app.get('/test_route', (req, res) => {
     res.send("good route!")
