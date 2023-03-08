@@ -65,7 +65,7 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      {tripName ? <h2>Your trip: {tripName}</h2> : ""}
+      {tripName ? <h2>Step 2: pick an accomodation for your trip: <h2 style={{color: "#38B7FF"}}>{tripName}</h2></h2> : ""}
       <SearchBar />
       <CardHolder carddata={carddata} setcarddata={setcarddata}/>
       <Footer />

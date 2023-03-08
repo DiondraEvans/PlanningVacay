@@ -12,7 +12,7 @@ import { AppContext } from '../../contexts/app_context';
 
 
 function GetSingleData() {
-  let { accomodation, setAccomodation } = useContext(AppContext);
+  let { accomodation, setAccomodation, tripName } = useContext(AppContext);
  
   const { id } = useParams();
   console.log(id)
@@ -33,7 +33,7 @@ function GetSingleData() {
     <div>
       <Nav />
       <div className="single_page">
-        
+      {tripName ? <h2>Step 3: Reserve your accomodation for your trip: <h2 style={{color: "#38B7FF", textAlign: "center"}}>{tripName}</h2></h2> : ""}
         <SearchBar/>
         <Picturegrid accomodation={accomodation} />
       
