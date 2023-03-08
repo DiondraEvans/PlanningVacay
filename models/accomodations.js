@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const accomodationSchema = new mongoose.Schema({
     accomodation_name: {type: String},
     price: {type: Number},
-    city: {type: String},
+    city: {type: String, lowercase: true },
     country: {type: String},
     bedrooms: {type: Number},
     baths: {type: Number},

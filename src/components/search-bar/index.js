@@ -31,6 +31,7 @@ const navigate = useNavigate();
      const handleChange = (e) =>{
       let newValue = e.target.value;
       setSearchString(newValue);
+      console.log(searchString)
      }
 
      const handleSubmit = (e) => {
@@ -41,7 +42,7 @@ const navigate = useNavigate();
       // call express server with the string
       
       makeServerCall(searchString, selectedOption, guestAmount)
-      console.log(guestAmount)
+      console.log(searchString)
      
       navigate("/:search");
    

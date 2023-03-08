@@ -42,7 +42,7 @@ app.get('/test_route', (req, res) => {
 
 
 app.get('/search', async (req, res) => {
-    let where = req.query.location
+    let where = req.query.location.toLowerCase()
     let type = req.query.type
     let guests = req.query.guest
     //doing greater than the number the user inputs means they will get the amount of room needed for the amount of people coming
