@@ -15,7 +15,7 @@ function SearchBar(props) {
   let { date, setDate, setcarddata } = useContext(AppContext);
   const [selectedOption, setSelectedOption] = useState("home");
   const [searchString, setSearchString] = useState("")
-  const [guestAmount, setGuestAmount] = useState()
+  const [guestAmount, setGuestAmount] = useState(0)
 const navigate = useNavigate();
 
     const [startDate, setStartDate] = useState(new Date());

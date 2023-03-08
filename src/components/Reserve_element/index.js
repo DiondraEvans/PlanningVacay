@@ -26,7 +26,7 @@ function GetReservedTrip(props) {
         const makePost = async () => {
             let serverResponse = await axios({
                 method: 'POST',
-                url: "http://localhost:5000/create_trip",
+                url: "/create_trip",
                 headers: {
                     'Content-Type': 'application/json',
                 },
