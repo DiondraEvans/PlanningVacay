@@ -1,0 +1,30 @@
+
+   .Login_square{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 40rem;
+    height: 20rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin-top: 10rem;
+}
+.login_form{
+     display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+} 
+
+@media screen and (max-width: 829px){
+    .Login_square {
+        width: 16rem;
+        height: 20rem;
+        box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+        margin-top: 10rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

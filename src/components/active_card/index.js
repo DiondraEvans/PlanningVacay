@@ -2,9 +2,12 @@ import '../../components/active_card/index.css';
 import React, { useEffect, useState, useContext  } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-// import {AppContext} from '../../contexts/app_context'
+import { makeServerCall } from '../../utilities';
+import {AppContext} from '../../contexts/app_context'
+import Activecard from '../active_card'
 
 function ActiveCard(props) {
+  let {user, activeCards, setActiveCards} = useContext(AppContext);
   const {tripObject} = props
   const navigate = useNavigate();
   const [image, setImage] = useState("")
@@ -15,10 +18,10 @@ function ActiveCard(props) {
   const [updatedFriendEmail, setUpdatedFriendEmail] = useState("")
   const [emails, setemails] = useState([])
   const [names, setnames] = useState([])
-//testing my theory on if we were to set the tripName in the index.js, we would be setting a name that we just made for the most recent card in our active trips list:
-// let { tripName } = useContext(AppContext);
-// console.log(tripName)
-    
+  
+
+  let userId = user._id;
+
     let list = tripObject.names.map((name, index)=>{
       return(
         <li key={index}>{name}</li>
@@ -50,9 +53,6 @@ function ActiveCard(props) {
   const toggleOptions = () => {
     setOptionsVisible(!optionsVisible);
   }
-  const toggleForm = () => {
-    setFormVisible(!formVisible);
-  }
 
   const handleEdit = (e) => {
     setFormVisible(!formVisible);
@@ -78,6 +78,9 @@ function ActiveCard(props) {
     setUpdatedFriendName("")
     setUpdatedFriendEmail("")
   }
+  // const handleChange = (e) =>{
+  //   let newValue = 
+  // }
   const handleSubmit = (event) =>{ 
     event.preventDefault()
     let trip = tripObject._id
@@ -105,24 +108,36 @@ function ActiveCard(props) {
         console.log(error.message)
       }
     }
+    const getTrips = async() =>{
+      console.log(userId)
+      let serverResponse = await makeServerCall(userId);
+      console.log(serverResponse)
+     let dataRetrieved = serverResponse.data
+    console.log(dataRetrieved)
+    let arrayOfActiveTrips = dataRetrieved.map((tripObject, _id, index) =>{
+      console.log(tripObject.tripName)
+      return(
+        <Activecard className="index" key={_id} tripObject={tripObject}/>
+      )
+    })
+    setActiveCards(arrayOfActiveTrips)
+    }
     makeCallToUpdate();
-    window.location.reload();
+    getTrips();
+    setUpdatedName("")
   }
 
   const handleDelete = (e) => {
     let trip = tripObject._id
     console.log(trip)
-    
     const makeCallToServer = async() =>{
     let serverResponse = await axios({
     method: 'DELETE',
     url: `/delete/${trip}`
   })
   console.log(serverResponse.data);
-  let data = serverResponse.data
   }
   makeCallToServer();
-  window.location.reload();
 }
 console.log(optionsVisible)
 
@@ -131,9 +146,10 @@ console.log(optionsVisible)
   return (
     <div className="active_card">
       <div className="title-ellipsis">
-        <h2 className="tripName">{tripObject.tripName}</h2>
-          <div class="activecard-container">
-        <div class="ellipsis" onClick={toggleOptions} >
+      <h2>{tripObject.tripName}</h2>
+        
+          <div className="activecard-container">
+        <div className="ellipsis" onClick={toggleOptions} >
           <span></span>
           <span></span>
           <span></span>

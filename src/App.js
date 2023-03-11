@@ -14,9 +14,10 @@ import Footer from './components/footer';
 
 function App() {
  
-  let {  names, tripName, carddata, setcarddata  } = useContext(AppContext);
+  let {  names, tripName, carddata, setcarddata } = useContext(AppContext);
   const mounted = useRef(false);
      console.log(names)
+
     let {search} = useParams();
   //useEffect will run no matter what when it is first mounted. because we have a conditional saying if we are searching using our search bar
   //from the single vacation page and it will direct us back to the home page with a parameter, if that parameter is present in the search bar an 

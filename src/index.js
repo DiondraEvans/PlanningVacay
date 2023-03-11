@@ -5,6 +5,8 @@ import App from './App';
 import Tripdetails from './pages/Trip-details-and-invite';
 import SingleVacation from "./pages/Single_Vacation"
 import Activetrips from './pages/Active-trips'
+import Authpage from './pages/Auth_page'
+import UserAccount from './pages/UserAccount';
 import reportWebVitals from './reportWebVitals';
 import ContextProvider from './contexts/app_context';
 import {
@@ -33,7 +35,15 @@ const router = createBrowserRouter([
   {
     path: "/activetrips",
     element: <Activetrips  />
-  }
+  },
+  {
+    path: "/authpage",
+    element: <Authpage  />
+  },
+  {
+    path: "/account",
+    element: <UserAccount  />
+  },
 ]);
 
 

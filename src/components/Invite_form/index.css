@@ -15,3 +15,11 @@
 #inputs:focus-visible{
         outline: 3px solid #38B7FF;
 }
+@media screen and (max-width: 829px){
+.summary {
+    height: 200px;
+    width: 100%;
+    overflow-y: scroll;
+    padding: 20px 10px 10px;
+}
+}

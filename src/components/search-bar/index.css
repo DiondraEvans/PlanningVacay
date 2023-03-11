@@ -1,227 +1,451 @@
-#entire-card{
-    justify-self: center;
-    align-self: center;
-}
-.search-area{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-}
-.invitefriendspopup {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background-color: white;
-    top: 33%;
-    left: 60%;
-    border-radius: 12px;
-    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
-    text-align: left;
-    padding: 15px; */
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    position: relative;
-    width: 300px;
-    height: 300px;
-    background-color: white;
+@media screen and (min-width: 830px){
+    #entire-card{
+        justify-self: center;
+        align-self: center;
+    }
+    .search-area{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+    .invitefriendspopup {
+        /* display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background-color: white;
+        top: 33%;
+        left: 60%;
+        border-radius: 12px;
+        box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+        text-align: left;
+        padding: 15px; */
     
-    border-radius: 12px;
-    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
-    text-align: left;
-    padding: 15px;
-    right: -296px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: relative;
+        width: 300px;
+        height: 300px;
+        background-color: white;
+        
+        border-radius: 12px;
+        box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+        text-align: left;
+        padding: 15px;
+        right: -296px;
+    }
+    .friendspic{
+        width: 16rem;
+    }
+    .friendsletters{
+        letter-spacing: .3rem;
+        text-align: center;
+    }
+    .invitenow{
+        background-color: #38B7FF;
+        border-radius: 12px;
+        width: 17rem;
+        height: 2.6rem;
+        border: none;
+        color: White;
+        font-size: larger;
+        cursor: pointer;
+    }
+    .bar{
+        width: 986.56px;
+        border-radius: 69px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: #DDDDDD;
+        box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+    }
+    .where{
+        border: none;
+        text-align: left;
+        flex-grow: 2;
+        border-radius: 69px;
+        height: 53px;
+        text-align: center;
+        background-color: #DDDDDD;
+    }
+    .where:focus{
+        background-color: #fff;
+        text-align: left;
+        flex-grow: 2;
+        border-radius: 69px;
+        height: 53px;
+        text-align: center;
+    }
+    .where:hover{
+        background-color: #fff;
+        text-align: left;
+        flex-grow: 2;
+        border-radius: 69px;
+        height: 53px;
+        text-align: center;
+    }
+    .dropdown{
+        border-radius: 22px;
+        text-align: center;
+        height: 53px;
+        border: none;
+        background-color: #DDDDDD;
+        color: grey;
+        border: none;
+    }
+    .dropdown:focus{
+        background-color: #fff;
+        text-align: center;
+        border-radius: 22px;
+        height: 53px;
+        border: none;
+    }
+    .dropdown:hover{
+        background-color: #fff;
+        text-align: center;
+        border-radius: 22px;
+        height: 53px;
+        border: none;
+    }
+    .react-datepicker-wrapper {
+        display: inline-block;
+        padding: 0;
+        border: 0;
+        flex: 19;
+    }
+    .checkin{
+        border-radius: 69px;
+        text-align: center;
+        height: 53px;
+        border: none;
+        background-color: #DDDDDD;
+    }
+    .checkin:focus{
+        background-color: #fff;
+        border-radius: 69px;
+        text-align: center;
+        height: 53px;
+    }
+    .checkin:hover{
+        background-color: #fff;
+        border-radius: 69px;
+        text-align: center;
+        height: 53px;
+    }
+    .checkout{
+        border-radius: 69px;
+        text-align: center;
+        height: 53px;
+        border: none;
+        background-color: #DDDDDD;
+    }
+    .checkout:focus{
+        background-color: #fff;
+        border-radius: 69px;
+        text-align: center;
+        height: 53px;
+    }
+    .checkout:hover{
+        background-color: #fff;
+        border-radius: 69px;
+        text-align: center;
+        height: 53px;
+    }
+    .gp{
+        text-align: center;
+        height: 53px;
+        border-radius: 69px;
+        flex-grow: 2;
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #DDDDDD;
+        cursor: pointer;
+    }
+    .gp:focus{
+        background-color: #fff;
+        text-align: center;
+        height: 53px;
+        border-radius: 69px;
+        flex-grow: 2;
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .gp:hover{
+        background-color: #fff;
+        text-align: center;
+        height: 53px;
+        border-radius: 69px;
+        flex-grow: 2;
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .guests{
+        border: none;
+        text-align: center;
+        height: 53px;
+        border-radius: 69px;
+        flex-grow: 1;
+        background-color: #DDDDDD;
+    }
+    .guests:focus{
+        background-color: #fff;
+        text-align: center;
+        height: 53px;
+        border-radius: 69px;
+        flex-grow: 1;
+    }
+    .guests:hover{
+        background-color: #fff;
+        text-align: center;
+        height: 53px;
+        border-radius: 69px;
+        flex-grow: 1;
+    }
+    .search-btn{
+        background-color: #38B7FF;
+        text-align: center;
+        height: 53px;
+        width: 53px;
+        border-radius: 100%;
+        cursor: pointer;
+        border: none;
+    }
 }
-.friendspic{
-    width: 16rem;
-}
-.friendsletters{
-    letter-spacing: .3rem;
-    text-align: center;
-}
-.invitenow{
-    background-color: #38B7FF;
-    border-radius: 12px;
-    width: 17rem;
-    height: 2.6rem;
-    border: none;
-    color: White;
-    font-size: larger;
-    cursor: pointer;
-}
-.bar{
-    width: 986.56px;
-    border-radius: 69px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: #DDDDDD;
-    box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
-}
-.where{
-    border: none;
-    text-align: left;
-    flex-grow: 2;
-    border-radius: 69px;
-    height: 53px;
-    text-align: center;
-    background-color: #DDDDDD;
-}
-.where:focus{
-    background-color: #fff;
-    text-align: left;
-    flex-grow: 2;
-    border-radius: 69px;
-    height: 53px;
-    text-align: center;
-}
-.where:hover{
-    background-color: #fff;
-    text-align: left;
-    flex-grow: 2;
-    border-radius: 69px;
-    height: 53px;
-    text-align: center;
-}
-.dropdown{
-    border-radius: 22px;
-    text-align: center;
-    height: 53px;
-    border: none;
-    background-color: #DDDDDD;
-    color: grey;
-    border: none;
-}
-.dropdown:focus{
-    background-color: #fff;
-    text-align: center;
-    border-radius: 22px;
-    height: 53px;
-    border: none;
-}
-.dropdown:hover{
-    background-color: #fff;
-    text-align: center;
-    border-radius: 22px;
-    height: 53px;
-    border: none;
-}
-.react-datepicker-wrapper {
-    display: inline-block;
-    padding: 0;
-    border: 0;
-    flex: 19;
-}
-.checkin{
-    border-radius: 69px;
-    text-align: center;
-    height: 53px;
-    border: none;
-    background-color: #DDDDDD;
-}
-.checkin:focus{
-    background-color: #fff;
-    border-radius: 69px;
-    text-align: center;
-    height: 53px;
-}
-.checkin:hover{
-    background-color: #fff;
-    border-radius: 69px;
-    text-align: center;
-    height: 53px;
-}
-.checkout{
-    border-radius: 69px;
-    text-align: center;
-    height: 53px;
-    border: none;
-    background-color: #DDDDDD;
-}
-.checkout:focus{
-    background-color: #fff;
-    border-radius: 69px;
-    text-align: center;
-    height: 53px;
-}
-.checkout:hover{
-    background-color: #fff;
-    border-radius: 69px;
-    text-align: center;
-    height: 53px;
-}
-.gp{
-    text-align: center;
-    height: 53px;
-    border-radius: 69px;
-    flex-grow: 2;
-    font-size: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #DDDDDD;
-    cursor: pointer;
-}
-.gp:focus{
-    background-color: #fff;
-    text-align: center;
-    height: 53px;
-    border-radius: 69px;
-    flex-grow: 2;
-    font-size: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.gp:hover{
-    background-color: #fff;
-    text-align: center;
-    height: 53px;
-    border-radius: 69px;
-    flex-grow: 2;
-    font-size: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.guests{
-    border: none;
-    text-align: center;
-    height: 53px;
-    border-radius: 69px;
-    flex-grow: 1;
-    background-color: #DDDDDD;
-}
-.guests:focus{
-    background-color: #fff;
-    text-align: center;
-    height: 53px;
-    border-radius: 69px;
-    flex-grow: 1;
-}
-.guests:hover{
-    background-color: #fff;
-    text-align: center;
-    height: 53px;
-    border-radius: 69px;
-    flex-grow: 1;
-}
-.search-btn{
-    background-color: #38B7FF;
-    text-align: center;
-    height: 53px;
-    width: 53px;
-    border-radius: 100%;
-    cursor: pointer;
-    border: none;
+
+@media screen and (max-width: 829px){
+    #entire-card{
+        justify-self: center;
+        align-self: center;
+    }
+    .search-area{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+    .invitefriendspopup {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: relative;
+        width: 300px;
+        height: 300px;
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+        text-align: left;
+        padding: 15px;
+        right: -6px;
+        top: -111px;
+    }
+    .friendspic{
+        width: 16rem;
+    }
+    .friendsletters{
+        letter-spacing: .3rem;
+        text-align: center;
+    }
+    .invitenow{
+        background-color: #38B7FF;
+        border-radius: 12px;
+        width: 17rem;
+        height: 2.6rem;
+        border: none;
+        color: White;
+        font-size: larger;
+        cursor: pointer;
+    }
+    .bar{
+        width: 235.55999999999995px;
+        border-radius: 69px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #DDDDDD;
+        box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+        padding: 5px;
+        text-align: center;
+    }
+    .where{
+        border: none;
+        text-align: left;
+        flex-grow: 2;
+        border-radius: 69px;
+        height: 53px;
+        text-align: center;
+        background-color: #DDDDDD;
+    }
+    .where:focus{
+        background-color: #fff;
+        text-align: left;
+        flex-grow: 2;
+        border-radius: 69px;
+        height: 53px;
+        text-align: center;
+    }
+    .where:hover{
+        background-color: #fff;
+        text-align: left;
+        flex-grow: 2;
+        border-radius: 69px;
+        height: 53px;
+        text-align: center;
+    }
+    .dropdown{
+        border-radius: 22px;
+        text-align: center;
+        height: 53px;
+        border: none;
+        background-color: #DDDDDD;
+        color: grey;
+        border: none;
+    }
+    .dropdown:focus{
+        background-color: #fff;
+        text-align: center;
+        border-radius: 22px;
+        height: 53px;
+        border: none;
+        width: 80%;
+    }
+    .dropdown:hover{
+        background-color: #fff;
+        text-align: center;
+        border-radius: 22px;
+        height: 53px;
+        border: none;
+        width: 80%;
+    }
+    .react-datepicker-wrapper {
+        display: inline-block;
+        padding: 0;
+        border: 0;
+        flex: 19;
+    }
+    .checkin{
+        border-radius: 69px;
+        text-align: center;
+        height: 53px;
+        border: none;
+        background-color: #DDDDDD;
+    }
+    .checkin:focus{
+        background-color: #fff;
+        border-radius: 69px;
+        text-align: center;
+        height: 53px;
+    }
+    .checkin:hover{
+        background-color: #fff;
+        border-radius: 69px;
+        text-align: center;
+        height: 53px;
+    }
+    .checkout{
+        border-radius: 69px;
+        text-align: center;
+        height: 53px;
+        border: none;
+        background-color: #DDDDDD;
+    }
+    .checkout:focus{
+        background-color: #fff;
+        border-radius: 69px;
+        text-align: center;
+        height: 53px;
+    }
+    .checkout:hover{
+        background-color: #fff;
+        border-radius: 69px;
+        text-align: center;
+        height: 53px;
+    }
+    .gp{
+        text-align: center;
+        height: 53px;
+        border-radius: 69px;
+        flex-grow: 2;
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       
+        cursor: pointer;
+    }
+    .gp:focus{
+        background-color: #fff;
+        text-align: center;
+        height: 53px;
+        border-radius: 69px;
+        flex-grow: 2;
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+    }
+    .gp:hover{
+        background-color: #fff;
+        text-align: center;
+        height: 53px;
+        border-radius: 69px;
+        flex-grow: 2;
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%
+    }
+    .guests{
+        border: none;
+        text-align: center;
+        height: 53px;
+        border-radius: 69px;
+        flex-grow: 1;
+        background-color: #DDDDDD;
+    }
+    .guests:focus{
+        background-color: #fff;
+        text-align: center;
+        height: 53px;
+        border-radius: 69px;
+        flex-grow: 1;
+    }
+    .guests:hover{
+        background-color: #fff;
+        text-align: center;
+        height: 53px;
+        border-radius: 69px;
+        flex-grow: 1;
+    }
+    .search-btn{
+        background-color: #38B7FF;
+        text-align: center;
+        height: 53px;
+        width: 169px;
+        border-radius: 69px;
+        cursor: pointer;
+        border: none;
+    }
 }

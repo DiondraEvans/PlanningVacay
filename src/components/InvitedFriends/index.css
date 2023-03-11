@@ -14,3 +14,10 @@
 .list-items li{
     list-style: none;
 }
+@media screen and (max-width: 829px){
+    .box {
+        box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+        width: 80%;
+        margin-top: 33px;
+    }
+}

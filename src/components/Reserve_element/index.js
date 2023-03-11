@@ -6,9 +6,11 @@ import { Link, useNavigate } from 'react-router-dom';
 function GetReservedTrip(props) {
     const navigate = useNavigate();
     const {accomodation} = props
-    let { tripName, names, date, summary, emails, setAccomodation, setName, setDate, setSummary, setemails, setnames } = useContext(AppContext);
+    let { tripName, names, date, summary, emails, setAccomodation, setName, setDate, setSummary, setemails, setnames, user } = useContext(AppContext);
     let id = accomodation._id
     let price = accomodation.price
+    let userId = user._id
+    console.log(userId)
     console.log(tripName)
     console.log(accomodation._id)
     const handleSubmit = (e) =>{
@@ -21,7 +23,8 @@ function GetReservedTrip(props) {
         summary,
         emails,
         id,
-        price
+        price,
+        userId
         }
         const makePost = async () => {
             try {
@@ -49,7 +52,7 @@ function GetReservedTrip(props) {
     <div className="ReservedTripBox">
     <h3>Total price:</h3>
     <p> ${accomodation.price}</p>
-    <button className="res-btn" onClick={(event) => handleSubmit(event)}>Reserve</button>
+    {user ? <button className="res-btn" onClick={(event) => handleSubmit(event)}>Reserve</button> : "Log in to reserve"}
     </div>
   );
 }

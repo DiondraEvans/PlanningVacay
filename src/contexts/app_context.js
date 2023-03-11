@@ -15,7 +15,8 @@ const AppContextProvider = (props) => {
     const [friendEmail, setFriendEmail] = useState('')
     const [emails, setemails] = useState([])
     const [names, setnames] = useState([])
-   
+    const [user, setUser] = useState("")
+    const [activeCards, setActiveCards] = useState("")
     return (
         <AppContext.Provider value={{
             carddata, setcarddata,
@@ -26,7 +27,9 @@ const AppContextProvider = (props) => {
             friendName, setFriendName,
             friendEmail, setFriendEmail,
             emails, setemails,
-            names, setnames
+            names, setnames,
+            user, setUser,
+            activeCards, setActiveCards
         }}>
             {props.children}
         </AppContext.Provider>

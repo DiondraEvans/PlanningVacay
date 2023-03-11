@@ -7,7 +7,8 @@ const tripSchema = new mongoose.Schema({
     summary: {type: String},
     emails: {type: Array},
     id: {type: String},
-    price: {type: Number}
+    price: {type: Number},
+    user: {type: String}
 });
 
 //make an instance of the fruitSchema

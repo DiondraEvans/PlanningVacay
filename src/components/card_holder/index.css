@@ -5,3 +5,13 @@
     gap: 10px;
     padding: 94px 30px 30px 0;
 }
+@media screen and (max-width: 829px){
+    .container-card{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        gap: 10px;
+        padding: 106px 0;  
+    }
+  
+}
