@@ -10,6 +10,7 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import './App.css';
 import Footer from './components/footer';
+import ResponsiveNav from './components/responsive_nav';
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
   let {  names, tripName, carddata, setcarddata } = useContext(AppContext);
   const mounted = useRef(false);
      console.log(names)
-
+const [isOpen, setIsOpen] = useState(false);
     let {search} = useParams();
   //useEffect will run no matter what when it is first mounted. because we have a conditional saying if we are searching using our search bar
   //from the single vacation page and it will direct us back to the home page with a parameter, if that parameter is present in the search bar an 
@@ -25,6 +26,9 @@ function App() {
   //was unmounting my App.js and when I return back to it useEffect would do an api call because it was being mounted again when my app.js was back on my DOM.
   //so to fix that i used a parameter to navigate back to the app.js and if that parameter is present when use effect runs, it will not make an automatic api call.
   useEffect(() => {
+    if(window.innerWidth >= 824){
+      setIsOpen(!isOpen)
+    }
     const fetchData = async () => {
       try {
         const response = await axios({
@@ -65,7 +69,9 @@ function App() {
 //once passed down to the card holder on the hotel page.
   return (
     <div className="App">
-      <Nav />
+      {isOpen ? <Nav /> : <ResponsiveNav />}
+      
+     
       {tripName ? <h2>Step 2: pick an accomodation for your trip: <h2 style={{color: "#38B7FF"}}>{tripName}</h2></h2> : ""}
       <SearchBar />
       <CardHolder carddata={carddata} setcarddata={setcarddata}/>

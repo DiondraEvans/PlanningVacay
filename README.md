@@ -3,7 +3,7 @@
 <ol>
     <li>Head to the search bar and click on "Group Planning" to access the group planning section on the website.</li>
     <li>Fill in your details and invite your closest friends to join in on the fun.</li>
-    <li>Once you've finished inviting your friends, click "Next Page" to select your vacation spot. You will pick the spot nce you press the blue reserve button. Windbnb currently offers three amazing <b>locations to choose from: Atlanta, New Orleans, and California.</b></li>
+    <li>Once you've finished inviting your friends, click "Next Page" to select your vacation spot. You will pick the spot nce you press the blue reserve button. Windbnb currently offers three amazing <b>locations to choose from: Atlanta, Florida, New Orleans, and California.</b></li>
     <li>Want to update your trip details? No problem. Navigate to the "Active Trips" section on the navigation bar, choose your desired trip, and click on the three circles on the top right-hand corner of the card to edit your information.</li>
     <li>Need to cancel your trip? Simply click on the delete button on your active trip card and voila! Your trip is canceled.</li>
 </ol>
