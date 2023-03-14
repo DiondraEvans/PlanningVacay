@@ -137,7 +137,24 @@ function ActiveCard(props) {
   })
   console.log(serverResponse.data);
   }
-  makeCallToServer();
+ 
+
+  const getTrips = async() =>{
+    console.log(userId)
+    let serverResponse = await makeServerCall(userId);
+    console.log(serverResponse)
+   let dataRetrieved = serverResponse.data
+  console.log(dataRetrieved)
+  let arrayOfActiveTrips = dataRetrieved.map((tripObject, _id, index) =>{
+    console.log(tripObject.tripName)
+    return(
+      <Activecard className="index" key={_id} tripObject={tripObject}/>
+    )
+  })
+  setActiveCards(arrayOfActiveTrips)
+  }
+   makeCallToServer();
+   getTrips();
 }
 console.log(optionsVisible)
 
