@@ -5,7 +5,7 @@ import axios from 'axios';
 import { Outlet } from 'react-router-dom';
 
 const GetSignUp = () =>  {
-  let { setUser, user } = useContext(AppContext);
+  let { setUser, user, showLoginForm, setShowLoginForm } = useContext(AppContext);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -30,7 +30,7 @@ const GetSignUp = () =>  {
     // check if password has special character (error handling)
     const { confirm, error, ...data } = formData;
 
-    try {
+  
       const response = await axios({
         method: 'POST',
         url: "/users/signup",
@@ -40,14 +40,7 @@ const GetSignUp = () =>  {
         data: formData
       });
       console.log(response);
-      // make async call to server with the data
-      // in a different file - we will bring in that function here
-    } catch (err) {
-      setFormData({
-        ...formData,
-        error: err.message
-      });
-    }
+      setShowLoginForm(true);
   }
 
   const disable = formData.password !== formData.confirm;

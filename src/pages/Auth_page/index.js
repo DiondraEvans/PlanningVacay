@@ -7,13 +7,12 @@ import SignupForm from '../../components/SignUp';
 import LoginForm from '../../components/LogIn';
 import UserLogOut from '../../components/LogOut';
 function GetAuthPage() {
-  const [showLoginForm, setShowLoginForm] = useState(true);
+  let { showLoginForm, setShowLoginForm } = useContext(AppContext);
 
   const handleClick = () => {
     setShowLoginForm(!showLoginForm);
   };
 
-  
   return ( 
   <div className="Auth_page">
     < Nav />

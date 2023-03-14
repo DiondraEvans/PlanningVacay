@@ -17,6 +17,7 @@ const AppContextProvider = (props) => {
     const [names, setnames] = useState([])
     const [user, setUser] = useState("")
     const [activeCards, setActiveCards] = useState("")
+    const [showLoginForm, setShowLoginForm] = useState(true);
     return (
         <AppContext.Provider value={{
             carddata, setcarddata,
@@ -29,7 +30,8 @@ const AppContextProvider = (props) => {
             emails, setemails,
             names, setnames,
             user, setUser,
-            activeCards, setActiveCards
+            activeCards, setActiveCards,
+            showLoginForm, setShowLoginForm
         }}>
             {props.children}
         </AppContext.Provider>
