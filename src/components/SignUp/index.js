@@ -30,7 +30,7 @@ const GetSignUp = () =>  {
     // check if password has special character (error handling)
     const { confirm, error, ...data } = formData;
 
-  
+    try {
       const response = await axios({
         method: 'POST',
         url: "/users/signup",
@@ -41,6 +41,12 @@ const GetSignUp = () =>  {
       });
       console.log(response);
       setShowLoginForm(true);
+    } catch (err) {
+      setFormData({
+        ...formData,
+        error: err.message
+      });
+    }
   }
 
   const disable = formData.password !== formData.confirm;

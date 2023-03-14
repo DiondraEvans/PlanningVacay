@@ -62,7 +62,7 @@ console.log(user)
                 <li>Online Experiences</li>
               </ul>
               <div className="account-area">
-                <Link to={'/authpage'} className="sign_up_link"><p>Sign in</p><img src={UserNotSignedIn} className="user-sign-img"></img></Link>
+                <Link to={'/authpage'} className="sign_up_link"><p>Log in</p><img src={UserNotSignedIn} className="user-sign-img"></img></Link>
               </div>
             </div>
           }
